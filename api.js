@@ -118,19 +118,17 @@ module.exports = function (u, p, si, d, s, o) {
 
     var call = function (method, params, callback) {
 
+        var doAuthenticate = function (callback) {
+            authenticate(function (err, data) {
+                if (err) {
+                    callback(err, data);
+                } else {
+                    call(method, params, callback);
+                }
+            });
+        };
 
-
-        if (!sessionId && !database && !userName && !server) {
-            var doAuthenticate = function (callback) {
-                authenticate(function (err, data) {
-                    if (err) {
-                        callback(err, data);
-                    } else {
-                        call(method, params, callback);
-                    }
-                });
-            };
-        } else {
+        if (sessionId && database && userName) {
             credentials = {};
             credentials.sessionId = sessionId;
             credentials.database = database;
