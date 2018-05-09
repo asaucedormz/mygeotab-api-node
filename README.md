@@ -1,4 +1,4 @@
-# mg-api-node #
+# mygeotab-api-node #
 
 Unofficial nodejs client for the MyGeotab API with support for authentication with SessionId
 

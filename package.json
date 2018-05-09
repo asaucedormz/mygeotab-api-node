@@ -1,8 +1,8 @@
 {
-  "name": "mg-api-node",
+  "name": "mygeotab-api-node",
   "version": "0.0.1",
-  "description": "Nodejs client for My Geotab API",
-  "main": "index.js",
+  "description": "Nodejs client for My Geotab API fork",
+  "main": "api.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
