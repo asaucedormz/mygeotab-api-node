@@ -1,11 +1,11 @@
 # mg-api-node #
 
-Unofficial nodejs client for the MyGeotab API
+Unofficial nodejs client for the MyGeotab API with support for authentication with SessionId
 
 ### Getting Started ###
 
 ```
-$ npm install mg-api-node --save
+$ npm install mygeotab-api-node --save
 ```
 
 ### Usage ###
@@ -36,6 +36,36 @@ api.authenticate(function(err, data) {
   });
 
 });
+
+
+OR
+
+let idServer = 0;
+
+let userName= 'user_name';
+let sessionId='17082007803898348770';
+let database = 'database_name';
+let server = `my${idServer}.geotab.com`;
+
+api = new API(userName, null, sessionId, database, server);
+  api.call('Get', {
+    typeName: 'Device',
+    //   search: {
+    //     name: data.userName
+    //   }
+  }, function (err, data) {
+
+    if (err) {
+      console.log('Error', err);
+      return;
+    }
+
+   
+
+  console.log('User', data);
+
+});
+
 ```
 
 ### Running Tests ###
