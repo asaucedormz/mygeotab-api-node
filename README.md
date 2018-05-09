@@ -47,22 +47,22 @@ let sessionId='17082007803898348770';
 let database = 'database_name';
 let server = `my${idServer}.geotab.com`;
 
-api = new API(userName, null, sessionId, database, server);
-  api.call('Get', {
-    typeName: 'Device',
-    //   search: {
-    //     name: data.userName
-    //   }
-  }, function (err, data) {
+let api = new API(userName, null, sessionId, database, server);
+api.call('Get', {
+  typeName: 'Device',
+  //   search: {
+  //     name: data.userName
+  //   }
+}, function (err, data) {
 
-    if (err) {
-      console.log('Error', err);
-      return;
-    }
+  if (err) {
+    console.log('Error', err);
+    return;
+  }
 
    
 
-  console.log('User', data);
+console.log('User', data);
 
 });
 
