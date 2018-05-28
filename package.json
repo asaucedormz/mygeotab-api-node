@@ -1,6 +1,6 @@
 {
   "name": "mygeotab-api-node",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Nodejs client for My Geotab API fork",
   "main": "api.js",
   "scripts": {
@@ -8,5 +8,5 @@
   },
   "author": "alejandro.saucedo@metricamovil.com",
   "license": "ISC",
-  "homepage":"https://github.com/asaucedormz/mygeotab-api-node#readme"
+  "homepage": "https://github.com/asaucedormz/mygeotab-api-node#readme"
 }

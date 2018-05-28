@@ -174,6 +174,29 @@ module.exports = function (u, p, si, d, s, o) {
         });
     };
 
+    var callAsync = function (method, params) {
+        return new Promise((resolve, reject) => {
+            call(method, params, (err, data) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(data);
+            });
+        });
+    }
+
+
+    var multiCallAsync = function (calls) {
+        return new Promise((resolve, reject) => {
+            multicall(calls, (err, data) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(data);
+            });
+        });
+    }
+
     var multicall = function (calls, callback) {
         var formattedCalls;
 
@@ -223,6 +246,17 @@ module.exports = function (u, p, si, d, s, o) {
         });
     };
 
+    var authenticateAsync = () => {
+        return new Promise((resolve, reject) => {
+            authenticate((err, data) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(data);
+            });
+        });
+    }
+
 
 
 
@@ -231,6 +265,9 @@ module.exports = function (u, p, si, d, s, o) {
         call: call,
         multicall: multicall,
         credentials: credentials,
-        server: rootServer
+        server: rootServer,
+        callAsync,
+        multiCallAsync,
+        authenticateAsync
     }
 };
